@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arcade_game"
+version = "0.1.0"
+description = "Un jeu d'arcade à but pédagogique"
+authors = [
+    { name = "Yves Cadour", email = "yves.cadour@saint-louis29.net" },
+]
+readme = "README.md"
+requires-python = ">=3.0"
+license = "GPL-3.0-or-later"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pyxel",
+]
+
+[project.urls]
+Homepage = "hhttps://github.com/saintlouis29/arcade_game"
+
+[tool.setuptools]
+packages = ["arcade_game"]
+package-dir = { "" = "src" }
+
+# Configuration pour Sphinx
+[tool.sphinx]
+source-dir = "docs"
+build-dir = "docs/_build"
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+    "flake8",  # Linter
+    "isort",   # Organisation des imports
+    "mypy",    # Vérification des types
+]
+
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "pytest-mock>=3.0",
+    "coverage>=6.0",
+]
+
+doc = [
+    "sphinx>=7.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "sphinx-autodoc-typehints>=1.0.0",
+    "myst-parser",  # Pour markdown dans Sphinx
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--cov=ribin",
+    "--cov-report=term-missing",
+    "--import-mode=importlib",
+    "-v"
+]
+testpaths = ["tests"]
+pythonpath = ["src"]
