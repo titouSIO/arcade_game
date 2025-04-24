@@ -58,6 +58,9 @@ class Game:
         # deplacement du vaisseau
         self.spaceship.update()
 
+        for shoot in self.spaceship.shoots:
+          shoot.update()   
+
     # =====================================================
     # == DRAW (30FPS)
     # =====================================================
@@ -69,5 +72,10 @@ class Game:
 
         self.spaceship.draw()
 
-# instanciation de notre classe
+    # instanciation de notre classe
+
+        # dessin des tir
+
+        for shoot in self.spaceship.shoots:
+          shoot.draw()   
 Game()
