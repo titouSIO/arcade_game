@@ -30,7 +30,7 @@ class Spaceship :
     """
     Une classe pour notre vaisseau
     """
-    def __init__(self, x, y):
+    def __init__(self, jeu, x, y):
         """Initialisation du vaisseau
 
         :param x: L'abscisse du coin supérieur gauche
@@ -38,6 +38,7 @@ class Spaceship :
         :param y: L'ordonnée du coin supérieur gauche
         :type y: int
         """
+        self.jeu = jeu
         # position initiale du vaisseau
         self.x = x
         self.y = y
@@ -59,7 +60,7 @@ class Spaceship :
             self.x += 1
 
     # =====================================================
-    # == UDRAX
+    # == DRAW
     # =====================================================
     def draw(self):
         """

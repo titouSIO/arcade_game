@@ -42,7 +42,7 @@ class Game:
         """
         self.w = 128 #largeur de l'écran
         self.h = 256 #hauteur de l'écran
-        self.spaceship = Spaceship(self.w//2, self.h-8) #instanciation du vaisseau
+        self.spaceship = Spaceship(self, self.w//2, self.h-8) #instanciation du vaisseau
         pyxel.init(self.w, self.h, title="Arcade Game")
         # chargement des images
         pyxel.load("images.pyxres")
@@ -57,7 +57,6 @@ class Game:
 
         # deplacement du vaisseau
         self.spaceship.update()
-
 
     # =====================================================
     # == DRAW (30FPS)
